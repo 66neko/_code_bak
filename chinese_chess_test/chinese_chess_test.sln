@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chinese_chess_test", "chinese_chess_test\chinese_chess_test.vcproj", "{8EF2EAD2-A8EB-4E30-A0D9-216EDAD1D50C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client_test", "Chinese_Chess_Client_test\Chinese_Chess_Client_test.vcproj", "{77265FF6-AD06-4E51-9C8A-9322D20951E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EF2EAD2-A8EB-4E30-A0D9-216EDAD1D50C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8EF2EAD2-A8EB-4E30-A0D9-216EDAD1D50C}.Debug|Win32.Build.0 = Debug|Win32
+		{8EF2EAD2-A8EB-4E30-A0D9-216EDAD1D50C}.Release|Win32.ActiveCfg = Release|Win32
+		{8EF2EAD2-A8EB-4E30-A0D9-216EDAD1D50C}.Release|Win32.Build.0 = Release|Win32
+		{77265FF6-AD06-4E51-9C8A-9322D20951E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{77265FF6-AD06-4E51-9C8A-9322D20951E7}.Debug|Win32.Build.0 = Debug|Win32
+		{77265FF6-AD06-4E51-9C8A-9322D20951E7}.Release|Win32.ActiveCfg = Release|Win32
+		{77265FF6-AD06-4E51-9C8A-9322D20951E7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "点不中no", "点不中no\点不中no.vcproj", "{63CC6906-242D-4CC4-ACCA-8770CBDD23CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63CC6906-242D-4CC4-ACCA-8770CBDD23CC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{63CC6906-242D-4CC4-ACCA-8770CBDD23CC}.Debug|Win32.Build.0 = Debug|Win32
+		{63CC6906-242D-4CC4-ACCA-8770CBDD23CC}.Release|Win32.ActiveCfg = Release|Win32
+		{63CC6906-242D-4CC4-ACCA-8770CBDD23CC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

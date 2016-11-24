@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "和狗狗一起做DFS和BFS", "和狗狗一起做DFS和BFS\和狗狗一起做DFS和BFS.vcproj", "{EFDAF76C-4276-402C-8B52-FB4FA773088F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFDAF76C-4276-402C-8B52-FB4FA773088F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EFDAF76C-4276-402C-8B52-FB4FA773088F}.Debug|Win32.Build.0 = Debug|Win32
+		{EFDAF76C-4276-402C-8B52-FB4FA773088F}.Release|Win32.ActiveCfg = Release|Win32
+		{EFDAF76C-4276-402C-8B52-FB4FA773088F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

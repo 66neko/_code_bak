@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mmm", "mmm\mmm.vcproj", "{10A25558-D53C-4FAE-84E2-532C4D288641}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mmmPS", "mmm\mmmPS.vcproj", "{82155854-C624-4EC2-B704-065BC02E020C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{10A25558-D53C-4FAE-84E2-532C4D288641} = {10A25558-D53C-4FAE-84E2-532C4D288641}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10A25558-D53C-4FAE-84E2-532C4D288641}.Debug|Win32.ActiveCfg = Debug|Win32
+		{10A25558-D53C-4FAE-84E2-532C4D288641}.Debug|Win32.Build.0 = Debug|Win32
+		{10A25558-D53C-4FAE-84E2-532C4D288641}.Release|Win32.ActiveCfg = Release|Win32
+		{10A25558-D53C-4FAE-84E2-532C4D288641}.Release|Win32.Build.0 = Release|Win32
+		{82155854-C624-4EC2-B704-065BC02E020C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{82155854-C624-4EC2-B704-065BC02E020C}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

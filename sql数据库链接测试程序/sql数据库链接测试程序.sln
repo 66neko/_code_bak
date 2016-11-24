@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sql数据库链接测试程序", "sql数据库链接测试程序\sql数据库链接测试程序.vcproj", "{CEE11A57-AD39-485C-A9F8-C9B718CBCA98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEE11A57-AD39-485C-A9F8-C9B718CBCA98}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CEE11A57-AD39-485C-A9F8-C9B718CBCA98}.Debug|Win32.Build.0 = Debug|Win32
+		{CEE11A57-AD39-485C-A9F8-C9B718CBCA98}.Release|Win32.ActiveCfg = Release|Win32
+		{CEE11A57-AD39-485C-A9F8-C9B718CBCA98}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

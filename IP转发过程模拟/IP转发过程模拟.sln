@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IP转发过程模拟", "IP转发过程模拟\IP转发过程模拟.vcproj", "{39205DFE-C028-4D30-9642-836D3892B14D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39205DFE-C028-4D30-9642-836D3892B14D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39205DFE-C028-4D30-9642-836D3892B14D}.Debug|Win32.Build.0 = Debug|Win32
+		{39205DFE-C028-4D30-9642-836D3892B14D}.Release|Win32.ActiveCfg = Release|Win32
+		{39205DFE-C028-4D30-9642-836D3892B14D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

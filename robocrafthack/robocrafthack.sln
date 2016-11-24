@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "robocrafthack", "robocrafthack\robocrafthack.vcproj", "{756C9941-4FD8-42F7-99C9-CD1B50597BD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{756C9941-4FD8-42F7-99C9-CD1B50597BD3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{756C9941-4FD8-42F7-99C9-CD1B50597BD3}.Debug|Win32.Build.0 = Debug|Win32
+		{756C9941-4FD8-42F7-99C9-CD1B50597BD3}.Release|Win32.ActiveCfg = Release|Win32
+		{756C9941-4FD8-42F7-99C9-CD1B50597BD3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
