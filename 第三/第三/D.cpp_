@@ -1,0 +1,18 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+#define Pr 3.1415926
+int main()
+{
+    double r,r1,r2,s;
+    while (cin>>r)
+    {
+        if (r == 0)break;
+        s = Pr * r * r;
+        s = s / 3;
+        r1 = sqrt(s/Pr);
+        r2 = sqrt(2*s/Pr);
+        cout<<fixed<<setprecision(3)<<r1<<" "<<r2<<endl;
+    }
+}

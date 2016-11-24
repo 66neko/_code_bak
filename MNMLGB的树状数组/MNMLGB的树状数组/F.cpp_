@@ -1,0 +1,47 @@
+
+
+
+#include <iostream>
+using namespace std;
+const int size = 32010;
+const int N = 15010;
+int x;
+int tree[size];
+int ligh[N];
+int lowbit(int t)
+{
+    return t&(-t);    
+} 
+void insert(int k)
+{
+     while (k <= size){
+           tree[k] ++;
+           k += lowbit(k);      
+     }
+}
+int find1(int k)
+{
+     int sum = 0;
+     while (k >= 1){
+           sum += tree[k];
+           k -= lowbit(k);
+     }     
+     return sum;
+}
+int main()
+{
+    int n, y;
+    while (scanf("%d", &n) != EOF){
+          for (int i = 0; i < n; i ++)ligh[i] = 0;
+          memset(tree, 0, sizeof(tree));
+          for (int i = 0; i < n; i ++){
+              scanf("%d%d", &x, &y);
+              ligh[find1(x+1)] ++;
+              insert(x+1);
+          }   
+          for (int i = 0; i < n; i ++){
+              printf("%d\n", ligh[i]);    
+          }
+    }
+    return 0;    
+}

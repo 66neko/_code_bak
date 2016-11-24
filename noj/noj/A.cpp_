@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+__int64 a[1000001] = {0};
+void YY()
+{
+	a[0] = 0;
+	a[1] = 0;
+	a[2] = 1;
+	a[3] = 3;
+	for(int i=4;i<=1000000;i++)
+	{
+		a[i] = (i-1) + a[i-1];
+	}
+}
+int main()
+{
+	__int64 n,m,num;
+	YY();
+	while(cin>>n>>m,n+m)
+	{
+		num = 0;
+		int kk = (n+m-3)/2;
+		kk++;
+		for(int i=2;i<=kk;i++)
+		{
+			num += a[min<__int64>(i,min<__int64>(n,m))];
+		}
+		num *= 2;
+		if((n+m-3)%2 != 0)
+		{
+			num += a[min<__int64>(kk+1,min<__int64>(n,m))];
+		}
+		num *= 2;
+		num += n*a[m];
+		num += m*a[n];
+		num *= 2;
+		cout<<num<<endl;
+
+	}
+	return 0;
+}
+
+//48 + 8 = 56
+//108+44 = 162
+//1,3,6
+//1,6,13
+//(n+m-3)/2
+//C(n,m)=C(n-1,m-1)+C(n-1,m£©
+//C(3,2)=C(2,1)+C(2,2);

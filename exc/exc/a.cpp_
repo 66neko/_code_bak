@@ -1,0 +1,17 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+	map<int,int> a;
+	a.insert(pair<int,int>(1,5));
+	a.insert(pair<int,int>(3,6));
+	a.insert(pair<int,int>(2,7));
+	map<int,int>::iterator i;
+	for(i=a.begin();i!=a.end();i++)
+	{
+		cout<<i->first<<" "<<i->second<<endl;
+	}
+	cout<<a.find(3)->first<<" "<<a.find(3)->second<<endl;
+}

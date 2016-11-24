@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+using namespace std;
+
+int rec[2345];
+
+bool getint( int &t )
+{
+	char c;
+	while( c = getchar(), c < '0' || c > '9' ) 
+	{
+		if( c == EOF )
+			return false;
+	}
+	t = c - '0';
+	while( c = getchar(), c >= '0' && c <= '9' )
+		t = t * 10 + c - '0';
+	return true;
+}
+
+int main()
+{
+	rec[1] = 1;
+	for( int i = 3; i <= 2343; i += 2 )
+	{
+		rec[i] = rec[i-2] + i * i;
+	}
+	int N;
+	while( getint( N ) )
+	{
+		printf( "%d\n", rec[N] );
+	}
+	return 0;
+}

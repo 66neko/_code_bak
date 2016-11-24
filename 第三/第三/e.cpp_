@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a,b,c,d;
+    int n,m;
+    char st[100][100];
+    while (cin>>n>>m)
+    {
+
+        for (int i=1;i<=n;i++)
+        {
+            for (int j=1;j<=n;j++)
+            {
+                cin>>st[i][j];
+            }
+        }
+        m = m % 4;
+		if(m<0)
+			m = m + 4;
+        switch (m)
+        {
+            case 3:
+                for (int i=n;i>=1;i--)
+                {
+                    for (int j=1;j<=n;j++)
+                    {
+                        cout<<st[j][i];
+                    }
+                    cout<<endl;
+                }
+                break;
+            case 2:
+                for (int i=n;i>=1;i--)
+                {
+                    for (int j=n;j>=1;j--)
+                    {
+                        cout<<st[i][j];
+                    }
+                    cout<<endl;
+                }
+                break;
+            case 1:
+                for (int i=1;i<=n;i++)
+                {
+                    for (int j=n;j>=1;j--)
+                    {
+                        cout<<st[j][i];
+                    }
+                    cout<<endl;
+                }
+                break;
+            default:
+                for (int i=1;i<=n;i++)
+                {
+                    for (int j=1;j<=n;j++)
+                    {
+                        cout<<st[i][j];
+                    }
+                    cout<<endl;
+                }
+                break;
+        }
+    }
+}

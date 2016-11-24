@@ -1,0 +1,18 @@
+// mmm.idl : mmm 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(mmm.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(79CB1C20-B7C6-41BC-9B83-39ECD71B3199),
+	version(1.0),
+	helpstring("mmm 1.0 类型库")
+]
+library mmmLib
+{
+	importlib("stdole2.tlb");
+};

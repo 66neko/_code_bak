@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstring>
+#include<cstdio>
+using namespace std;
+
+int main()
+{
+	long long n,m,a,b,k[21000];
+	while(cin>>n)
+	{
+		memset(k,0,8*(n+1));
+		cin>>m;
+		for(long long i=1;i<=m;i++)
+		{
+			scanf("%lld %lld",&a,&b);
+			k[min(a,b)]--;
+			k[max(a,b)]++;
+		}
+		long long p = 0;
+		long long num = 0;
+		for(long long i=1;i<=n;i++)
+		{
+			p += k[i];
+			if(p != 0)
+				num++;
+		}
+		cout<<n-num<<endl;
+	}
+	return 0;
+}

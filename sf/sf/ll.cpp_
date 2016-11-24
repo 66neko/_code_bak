@@ -1,0 +1,48 @@
+#include<iostream>
+#include<cmath>
+#include<cstdio>
+using namespace std;
+/*
+double fs(double x1,double y1,double x2,double y2)
+{
+	return sqrt(pow(abs(x2-x1),2) - pow(abs(y2-y1),2));
+}
+*/
+double l,d,x,y;
+double ff(double n)
+{
+	double x0,y0,c,s;
+	s=sin(n);
+	c=cos(n);
+	x0=-1*(d/s+c*l);
+	y0=(d/c+s*l);
+	double tmp=(1.0-x/y0)*x0*(-1);
+	return tmp;
+}
+int main()
+{
+	double left,right,mid,midmid;
+	while(cin>>x>>y>>l>>d)
+	{
+		left = 0;
+		right = asin(1.0);
+		while(fabs(right - left) >= 0.0000001)
+		{
+			mid = (right + left)/2;
+			midmid = (left + mid)/2;
+			if(ff(mid) > ff(midmid))
+			{
+				left = midmid;
+			}
+			else
+			{
+				right = mid;
+			}
+		}
+		double ttt = ff(left);
+		if(ttt < y)
+			cout<<"yes\n";
+		else
+			cout<<"no\n";
+	}
+}

@@ -1,0 +1,99 @@
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int a[60000];
+int b[60000];
+int n,t,k1,k2,case_;
+
+int lowbit(int t)
+{
+	return t&(-t);
+}
+
+void Setup(int k)
+{
+	for(int i=1;i<=k;i++)
+	{
+		for(int j=(i-lowbit(i)+1);j<=i;j++)
+		{
+			b[i] += a[j];
+		}
+	}
+}
+
+void Add(int end,int num)
+{
+	while(end <= n)
+	{
+		b[end] += num;
+		end += lowbit(end);
+	}
+}
+
+void Sub(int end,int num)
+{
+	while(end <= n)
+	{
+		b[end] -= num;
+		end += lowbit(end);
+	}
+}
+
+void Query(int x,int y)
+{
+	int s1 = 0;
+	int s2 = 0;
+	x--;
+	while(x > 0)
+	{
+		s1 += b[x];
+		x -= lowbit(x);
+	}
+	while(y > 0)
+	{
+		s2 += b[y];
+		y -= lowbit(y);
+	}
+	printf("%d\n",s2-s1);
+}
+
+int main()
+{
+	case_ = 0;
+	char s1[10];
+	cin>>t;
+	while(t--)
+	{
+		case_++;
+		a[0] = 0;
+		b[0] = 0;
+		cin>>n;
+		memset(b,0,sizeof(b));
+		for(int i=1;i<=n;i++)
+		{
+			scanf("%d",&a[i]);
+		}
+		Setup(n);
+		//cout<<b[1]<<" "<<b[2]<<" "<<b[3]<<endl;
+		cout<<"Case "<<case_<<":"<<endl;
+		while(cin>>s1)
+		{
+			if(s1[0] == 'E')
+				break;
+			scanf("%d%d",&k1,&k2);
+			switch(s1[0])
+			{
+			case 'Q':
+				Query(k1,k2);
+				break;
+			case 'A':
+				Add(k1,k2);
+				break;
+			case 'S':
+				Sub(k1,k2);
+				break;
+
+			}
+		}
+	}
+}

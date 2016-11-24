@@ -1,0 +1,64 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n,z,cas = 0,yes;
+	double x[101],y[101],a[101][101],v[101],sum,min;
+	while(cin>>n,n)
+	{
+		cas++;
+		sum = 0.0f;
+		memset(a,0,sizeof(a));
+		for(int i=1;i<=n;i++)
+		{
+			scanf("%lf %lf",&x[i],&y[i]);
+		}
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=1;j<=n;j++)
+			{
+				a[i][j] = sqrt((x[i]-x[j])*(x[i]-x[j]) + (y[i]-y[j])*(y[i]-y[j]));
+			}
+		}
+		for(int i=1;i<=n;i++)
+		{
+			v[i] = a[1][i];
+		}
+		/////////////////////////////////////////////////////////
+		for(int i=1;;i++)
+		{
+			yes = 0;
+			min = 99999;
+			for(int j=1;j<=n;j++)
+			{
+				if(v[j] && v[j] < min)
+				{
+					min = v[j];
+					z = j;
+					yes = 1;
+				}
+			}
+			if(yes == 0)
+				break;
+			sum += min;
+			v[z] = 0;
+			for(int j=1;j<=n;j++)
+			{
+				if(a[z][j]<v[j] && a[z][j])
+				{
+					v[j] = a[z][j];
+				}
+			}
+		}
+		////////////////////////////////////////////////////////////////
+		if(cas != 1)
+			cout<<endl;
+		cout<<"Case #"<<cas<<":"<<endl;
+		cout<<"The minimal distance is: "<<fixed<<setprecision(2)<<sum<<endl;
+	}
+}

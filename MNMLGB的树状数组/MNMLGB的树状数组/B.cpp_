@@ -1,0 +1,99 @@
+#include<iostream>
+#include<cstring>
+#define MAX 100005
+#define kmp KMP
+using namespace std;
+
+int k_next[1000];
+
+void GetNext(const char *a,int *m_next)
+{
+	int j = 0;
+	int k = -1;
+	m_next[0] = -1;
+	while(a[j] != '\0')
+	{
+		if(k == -1 || a[j] == a[k])
+		{
+			j++;
+			k++;
+			if(a[j] != a[k])
+			{
+				m_next[j] = k;
+			}
+			else
+			{
+				m_next[j] = m_next[k];
+			}
+		}
+		else
+		{
+			k = m_next[k];
+		}
+	}
+}
+
+
+int KMP(const char *A,const char *B)
+{
+	int i = 0;
+	int j = 0;
+	int len1 = strlen(A);
+	int len2 = strlen(B);
+	int *next = new int[len2+1];
+	GetNext(B,next);
+	while(i < len1 && j < len2)
+	{
+		if(j == -1 || A[i] == B[j])
+		{
+			i++;
+			j++;
+		}
+		else
+		{
+			j = next[j];
+		}
+	}
+	if(i >= len1)
+	{
+		return j;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int main()
+{
+    char s[MAX],t[MAX];
+    for(; ~scanf("%s%s",s,t);)
+    {
+        int x=kmp(s,t);
+        int y=kmp(t,s);
+        if(x==y)
+        {
+            if(strcmp(s,t)>0)
+            {
+                printf("%s",t);
+                printf("%s\n",s+x);
+            }
+            else
+            {
+                printf("%s",s);
+                printf("%s\n",t+x);
+            }
+        }
+        else if(x>y)
+        {
+            printf("%s",s);
+            printf("%s\n",t+x);
+        }
+        else
+        {
+            printf("%s",t);
+            printf("%s\n",s+y);
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,34 @@
+#include<iostream>
+#include<cstdio>
+#define MAXX 21212
+using namespace std;
+
+int father[MAXX],tq;
+int find(int x)
+{
+	while(x != father[x])x = father[x];
+	return x;
+}
+int main()
+{
+	int n,m,a,b;
+	while(cin>>n,n)
+	{
+		scanf("%d",&m);
+		tq = n - 1;
+		for(int i=1;i<=n;i++)
+			father[i] = i;
+		for(int i=1;i<=m;i++)
+		{
+			scanf("%d %d",&a,&b);
+			int x = find(a);
+			int y = find(b);
+			if(x != y)
+			{
+				father[x] = b;
+				tq--;
+			}
+		}
+		cout<<tq<<endl;
+	}
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstring>
+#define MAX 2011
+using namespace std;
+
+int n,v,m,a[MAX],b[MAX];
+int t[MAX];
+
+int main()
+{
+	cin>>m;
+	while(m--)
+	{
+		cin>>n>>v;
+		memset(t,0,sizeof(t));
+		memset(a,0,sizeof(a));
+		memset(b,0,sizeof(b));
+		for(int i=1;i<=n;i++)
+		{
+			cin>>b[i];
+		}
+		for(int i=1;i<=n;i++)
+		{
+			cin>>a[i];
+		}
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=v;j>=a[i];j--)
+			{
+				t[j] = max(t[j],t[j-a[i]]+b[i]);
+			}
+		}
+		cout<<t[v]<<endl;
+	}
+}

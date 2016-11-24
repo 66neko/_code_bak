@@ -1,0 +1,59 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+int a[6],lag,ans,sum;
+int WWWWWTFACM(int n)
+{
+	int i,j,k,m;
+	if(n == 4)
+	{
+		for (i=1;i<=4;i++) 
+			for (j=i+1;j<=4;j++) 
+			{ 
+				m=a[i]+a[j]; 
+				while (m>1024) m-=1024; 
+				if (m>ans) ans=m; 
+			} 
+			for (i=1;i<=4;i++) 
+				for (j=i+1;j<=4;j++) 
+					for (k=j+1;k<=4;k++) 
+						if ((a[i]+a[j]+a[k])%1024==0) ans=1024; 
+	}
+	else 
+	{ 
+		for (i=1;i<=5;i++) 
+			for (j=i+1;j<=5;j++) 
+				for (k=j+1;k<=5;k++) 
+					if ((a[i]+a[j]+a[k])%1024==0) 
+					{ 
+						m=sum-a[i]-a[j]-a[k]; 
+						while (m>1024) m-=1024; 
+						if (m>ans) ans=m; 
+					} 
+	} 
+	return ans;
+}
+int main()
+{
+	int n;
+	while(scanf("%d",&n)!=EOF)
+	{
+		memset(a,0,sizeof(a));
+		ans = 0;
+		sum = 0;
+		for(int i=1;i<=n;i++)
+		{
+			scanf("%d",&a[i]);
+			sum += a[i];
+		}
+		if(n <= 3)
+		{
+			cout<<"1024\n";
+			continue;
+		}
+		cout<<WWWWWTFACM(n)<<endl;
+	}
+}

@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+__int64 a[100099];
+void sum()
+{
+    a[0] = 0;
+    for (__int64 i=1;i<=100001;i++)
+    {
+        if (i%3 == 0)
+        {
+            a[i] = a[i-1] + i * i * i;
+        }
+        else 
+        {
+            a[i] = a[i-1] + i;
+        }
+    }
+    return;
+}
+
+int main()
+{
+    __int64 n;
+    sum();
+    while (cin>>n)
+    {
+        if (n < 0)
+        {
+            break;
+        }
+        cout<<a[n]<<endl;
+    }
+}

@@ -1,0 +1,50 @@
+#include<iostream>
+#include<cstring>
+#include<cstdio>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+const double EPS = 1e-6;
+double Fun_(double x,double y)
+{
+	double a;
+	a = 6*pow(x,7.0) + 8*pow(x,6.0) + 7*pow(x,3.0) + 5*pow(x,2.0) - y*x;
+	return a;
+}
+double Fun(double x,double y)
+{
+    return 6*pow(x,7.0)+8*pow(x,6.0)+7*pow(x,3.0)+5*pow(x,2.0)-y*x;
+}
+
+int main()
+{
+	int t;
+	double k;
+	//while(cin>>k)
+	//{
+	//	cout<<Fun(k)<<endl;
+	//}
+	cin>>t;
+	while(t--)
+	{
+		double y;
+		cin>>y;
+		double mid,midmid,left,right;
+		double mid_v,midmid_v;
+		
+		left = 0;
+		right = 100;
+		while(left + EPS < right)
+		{
+			mid = (2*left+right)/3.0;
+			midmid = (left+2*right)/3.0;
+			mid_v = Fun(mid,y);
+			midmid_v  = Fun(midmid,y);
+			if(mid_v < midmid_v)
+				right = midmid;
+			else
+				left = mid;
+		}
+		cout<<fixed<<setprecision(4)<<Fun(left,y)<<endl;
+	}
+}

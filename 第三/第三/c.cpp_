@@ -1,0 +1,57 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	int d,m,y;
+	int month[2][13]={{0,31,28,31,30,31,30,31,31,30,31,30,31},
+	{0,31,29,31,30,31,30,31,31,30,31,30,31}};
+	while(cin>>y>>m>>d)
+	{
+		int sum = d;
+		int ll = y%4 == 0 && y%100 !=0 || y%400==0;
+		for(int i=0;i<m;i++)
+			sum += month[ll][i];
+		if(m == 2)
+		{ 
+			if(ll == 0 && d>28)
+			{
+				cout<<"illegal"<<endl;
+				continue;
+			}
+			if(ll && d>29)
+			{
+				cout<<"illegal"<<endl;
+				continue;
+			}
+		}
+		if((m==1||m==3||m==5||m==7||m==8||m==10||m==12)&&d>31)
+		{
+			cout<<"illegal"<<endl;
+			continue;
+		}
+		if((m==4||m==6||m==9||m==11)&&d>30)
+		{
+			cout<<"illegal"<<endl;
+			continue;
+		}
+		if(m==0||d==0)
+		{
+			cout<<"illegal"<<endl;
+			continue;
+		}
+		for(int i=1;i<y;i++)
+		{
+			int ll = i%4 == 0 && i%100 != 0 || i%400 == 0;
+			sum += ((365 + ll) % 7);
+		}
+		int k = sum%7;
+		if(k == 1) cout<<"Monday"<<endl;
+		else if(k == 2) cout<<"Tuesday"<<endl;
+		else if(k == 3) cout<<"Wednesday"<<endl;
+		else if(k == 4) cout<<"Thursday"<<endl;
+		else if(k == 5) cout<<"Friday"<<endl;
+		else if(k == 6) cout<<"Saturday"<<endl;
+		else cout<<"Sunday"<<endl;
+	}
+}

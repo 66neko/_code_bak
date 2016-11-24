@@ -1,0 +1,35 @@
+#include <cstdio>
+#include <iostream>
+
+using namespace std;
+
+#define Maxl 1000005
+int prime[Maxl];
+int rank[Maxl];
+int main()
+{
+	int k = 0, i, j;
+	for (i =2; i < Maxl; i++)
+	{
+		if (prime[i] == 0)
+		{
+			rank[i] = ++k;
+			for (j = i; j < Maxl; j += i)
+			{
+				prime[j] = i;
+			}
+		}
+	}
+	prime[1] = 0;
+	int n;
+	while(scanf("%d", &n) == 1)
+	{
+		if(n == 1)
+		{
+			printf("0\n");
+			continue;
+		}
+		int k = prime[n];
+		printf("%d\n", rank[k]);
+	}
+}

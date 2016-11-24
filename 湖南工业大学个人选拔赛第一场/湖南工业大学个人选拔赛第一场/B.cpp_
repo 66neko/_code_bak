@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+long long pow(long long k)
+{
+	return k*k*k;
+}
+int main()
+{
+	long long n,m;
+	long long a[2323];
+	while(cin>>n>>m)
+	{
+		for(long long i=1;i<=n;i++)
+		{
+			cin>>a[i];
+		}
+		long long p = 0;
+		long long k = 1;
+		long long num = 0;
+		while(1)
+		{
+			if(k > n)
+			{
+				break;
+			}
+			if((p == 0 && p+a[k] <= m)||(p != 0 && p+a[k] < m))
+			{
+				if(p != 0)
+				{
+					p++;
+				}
+				p += a[k];
+			}
+			else
+			{
+				num += pow(m-p);
+				p = 0;
+				k--;
+			}
+			k++;
+		}
+		cout<<num<<endl;
+	}
+}

@@ -1,0 +1,49 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+using namespace std;
+int x,y,a[1010][1010],v[1020];
+int n,m,yes,sum,minn,z;
+
+int main()
+{
+	while(cin>>n>>m)
+	{
+		sum = 0;
+		memset(a,0,sizeof(a));
+		for(int i=1;i<=m;i++)
+		{
+			scanf("%d %d",&x,&y);
+			scanf("%d",&a[x][y]);
+		}
+		for(int i=1;i<=n;i++)
+			v[i] = a[1][i];
+		for(int i=1;;i++)
+		{
+			yes = 0;
+			minn = 99999;
+			for(int j=1;j<=n;j++)
+			{
+				if(v[j] && v[j] < minn)
+				{
+					minn = v[j];
+					z = j;
+					yes = 1;
+				}
+			}
+			if(yes == 0)
+				break;
+			sum += minn;
+			v[z] = 0;
+			for(int j=1;j<=n;j++)
+			{
+				if(a[z][j] < v[j] && a[z][j])
+				{
+					v[j] = a[z][j];
+				}
+			}
+
+		}
+		cout<<sum<<endl;
+	}
+}
